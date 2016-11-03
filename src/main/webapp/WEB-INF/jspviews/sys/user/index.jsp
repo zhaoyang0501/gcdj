@@ -9,6 +9,8 @@
        color: red;
       }
       </style>
+      	  <script src="${pageContext.request.contextPath}/js/plugins/layer/layer.js"></script>
+         <script src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
 	</head>
 			<div class="main-content">
 					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -161,7 +163,7 @@
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
-	</body>
+
 	<script>
 	 <c:if test="${state=='success'}">
 	  toastr.success('${tip}');
@@ -327,4 +329,5 @@
     	$(".nav-list a[href='"+$(".breadcrumb li[targeturl]").attr("targeturl")+"']").parent().addClass("active");
     });
     </script>
+    	</body>
 </html>
