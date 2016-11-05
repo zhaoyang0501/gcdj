@@ -44,7 +44,9 @@ import com.pzy.jcook.dto.json.SuccessResponse;
 import com.pzy.jcook.sys.entity.User;
 import com.pzy.jcook.sys.service.UserService;
 import com.pzy.jcook.workflow.dto.WorkItemDTO;
+import com.pzy.jcook.workflow.entity.Ship;
 import com.pzy.jcook.workflow.entity.Workitem;
+import com.pzy.jcook.workflow.service.ShipService;
 import com.pzy.jcook.workflow.service.WorkFlowService;
 import com.pzy.jcook.workflow.service.WorkitemService;
 
@@ -60,7 +62,7 @@ public class ShipController {
 	private static final Logger log = LoggerFactory.getLogger(ShipController.class);
 
 	@Autowired
-	WorkitemService workitemService;
+	ShipService shipService;
 
 	@Autowired
 	private ProcessEngine processEngine;
@@ -80,7 +82,138 @@ public class ShipController {
 	public String create(Model model) {
 		return "workflow/ship/create";
 	}
+	@RequestMapping(value = "create", method = RequestMethod.POST)
+	public String create(Ship ship,Model model) {
+		
+		User user = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
+		ship.setCreater(user);
+		ship.setCreateDate(new Date());
+		shipService.save(ship);
+		/** 发起流程 */
+		Map<String, Object> activtiMap = new HashMap<String, Object>();
+		activtiMap.put("title", ship.getCreater().getChinesename()+"于"+DateFormatUtils.format(new Date(), "yyyy-MM-dd")+"发起的发货申请单，客户单位["+ship.getReceiveName()+"]");
+		activtiMap.put("creater", user.getId());
+		activtiMap.put("manger", 2);
+		activtiMap.put("type", ship.getType());
 
+		
+
+		ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceByKey("ship",
+				ship.getId().toString(), activtiMap);
+		/** 完成第一步（提交申请） */
+		String sn = "SHIP" + DateFormatUtils.format(new Date(), "_yyyy_MM_") + processInstance.getId();
+
+		processEngine.getRuntimeService().setVariable(processInstance.getProcessInstanceId(), "sn", sn);
+
+		List<Task> tasks = processEngine.getTaskService().createTaskQuery().processInstanceId(processInstance.getId())
+				.list();
+		processEngine.getTaskService().complete(tasks.get(0).getId(), activtiMap);
+
+		model.addAttribute("response", new SuccessResponse("单据提交成功！"));
+		model.addAttribute("users", userService.findAll());
+		return "workflow/ship/create";
+	}
+	
+	/***
+	 * 跳转到表单详情
+	 * 
+	 * @param taskid
+	 * @param prcessInstanceid
+	 * @return
+	 */
+	@RequestMapping("/task/{taskid}/{prcessInstanceid}")
+	public ModelAndView task(@PathVariable String taskid, @PathVariable String prcessInstanceid) {
+		ProcessInstance processInstance = processEngine.getRuntimeService().createProcessInstanceQuery()
+				.processInstanceId(prcessInstanceid).singleResult();
+		Task task = processEngine.getTaskService().createTaskQuery().taskId(taskid).singleResult();
+		/** 找task key用于页面跳转 */
+		String taskkey = "";
+
+		if (task == null) {
+			HistoricTaskInstance historicTaskInstance = processEngine.getHistoryService()
+					.createHistoricTaskInstanceQuery().taskId(taskid).singleResult();
+
+			taskkey = historicTaskInstance.getTaskDefinitionKey();
+		} else {
+			taskkey = task.getTaskDefinitionKey();
+		}
+
+		String businessKey = "";
+		if (processInstance == null)
+			businessKey = processEngine.getHistoryService().createHistoricProcessInstanceQuery()
+					.processInstanceId(prcessInstanceid).singleResult().getBusinessKey();
+		else
+			businessKey = processInstance.getBusinessKey();
+
+		ModelAndView mav = new ModelAndView("workflow/ship/" + taskkey);
+
+		/**
+		 * task ,assignee，prcessInstanceid，processDefinitionId用于审批页面顶部提示以及流程图显示
+		 */
+		mav.addObject("task", task);
+		mav.addObject("processDefinitionId", processInstance.getProcessDefinitionId());
+		mav.addObject("taskhistory", workFlowService.findHistoryTask(prcessInstanceid));
+		mav.addObject("prcessInstanceid", prcessInstanceid);
+		mav.addObject("users", userService.findAll());
+		mav.addObject("bean", shipService.find(Long.valueOf(businessKey)));
+		mav.addObject("sn", processEngine.getRuntimeService().getVariable(prcessInstanceid, "sn"));
+		return mav;
+	}
+
+	@RequestMapping("/taskhistory/{prcessInstanceid}")
+	public ModelAndView taskhistory(@PathVariable String prcessInstanceid) {
+		HistoricProcessInstance processInstance = processEngine.getHistoryService().createHistoricProcessInstanceQuery()
+				.processInstanceId(prcessInstanceid).singleResult();
+		Assert.notNull(processInstance, "参数错误或者流程不存在");
+		String bussnessid = processEngine.getHistoryService().createHistoricProcessInstanceQuery()
+				.processInstanceId(prcessInstanceid).singleResult().getBusinessKey();
+
+		ModelAndView mav = new ModelAndView("workflow/ship/history");
+		mav.addObject("taskhistory", workFlowService.findHistoryTask(prcessInstanceid));
+		mav.addObject("bean", shipService.find(Long.valueOf(bussnessid)));
+		mav.addObject("sn", processEngine.getHistoryService().createHistoricVariableInstanceQuery()
+				.processInstanceId(prcessInstanceid).variableName("sn").singleResult().getValue().toString());
+		/**
+		 * task ,assignee，prcessInstanceid，processDefinitionId用于审批页面顶部提示以及流程图显示
+		 */
+		Task currentTask = workFlowService.getCurrentTask(prcessInstanceid);
+		mav.addObject("task", currentTask);
+		mav.addObject("prcessInstanceid", prcessInstanceid);
+		mav.addObject("processDefinitionId", processInstance.getProcessDefinitionId());
+		return mav;
+	}
+	
+	@RequestMapping("/doapprove/{taskid}/{prcessInstanceid}")
+	public String doapprove(@PathVariable String taskid, @PathVariable String prcessInstanceid, Boolean pass,
+			String approvals, Ship ship,
+			RedirectAttributes redirectAttributes) {
+		ProcessInstance processInstance = processEngine.getRuntimeService().createProcessInstanceQuery()
+				.processInstanceId(prcessInstanceid).singleResult();
+		Task task = processEngine.getTaskService().createTaskQuery().taskId(taskid).singleResult();
+		Map<String, Object> activtiMap = new HashMap<String, Object>();
+
+		/** TODO 判断当前登录人是不是任务的拥有者 ***/
+		if ("divide".equals(task.getTaskDefinitionKey())) {
+			activtiMap.put("pass", pass);
+			activtiMap.put("sender", 4);
+			processEngine.getTaskService().addComment(task.getId(), processInstance.getId(), approvals);
+			processEngine.getTaskService().complete(task.getId(), activtiMap);
+			ship.setApprove(approvals);
+			this.shipService.save(ship);
+		} else if ("usertask2".equals(task.getTaskDefinitionKey())) {
+			activtiMap.put("sender", 4);
+			processEngine.getTaskService().addComment(task.getId(), processInstance.getId(), approvals);
+			processEngine.getTaskService().complete(task.getId(), activtiMap);
+			this.shipService.save(ship);
+		} else if ("usertask4".equals(task.getTaskDefinitionKey())) {
+			processEngine.getTaskService().addComment(task.getId(), processInstance.getId(), approvals);
+			processEngine.getTaskService().complete(task.getId(), activtiMap);
+			this.shipService.save(ship);
+		}
+
+		redirectAttributes.addFlashAttribute("response", new SuccessResponse("操作成功"));
+		return "redirect:/workflow/ship/taskhistory/" + prcessInstanceid;
+	}
 	@RequestMapping(value = "index")
 	public String index(Model model) {
 		return "workitem/index";

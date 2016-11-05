@@ -31,7 +31,6 @@ import com.pzy.jcook.workflow.dto.ActivitDTO;
 import com.pzy.jcook.workflow.entity.Workitem;
 import com.pzy.jcook.workflow.service.WorkFlowService;
 import com.pzy.jcook.workflow.service.WorkitemService;
-import com.pzy.jcook.workflow.service.nofy.DayuSMSNofyServiceImpl;
 
 @ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/spring/root-context.xml"}) 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -48,8 +47,6 @@ public class WorkFlowTest {
 	
 	@Autowired
 	UserService userService ;
-	@Autowired
-	DayuSMSNofyServiceImpl dayuSMSNofyServiceImpl;
 	@Test
 	public void getrole() throws ParseException  {
 		//userService.singlefindByRole(1l);
@@ -73,7 +70,7 @@ public class WorkFlowTest {
 	}
 	@Test
 	public void deploy(){
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream("processes/workitem.zip");  
+		InputStream in = this.getClass().getClassLoader().getResourceAsStream("processes/ship.zip");  
 	    ZipInputStream zipInputStream = new ZipInputStream(in);  
 	    Deployment deployment = processEngine.getRepositoryService()
 	                    .createDeployment()
@@ -93,7 +90,7 @@ public class WorkFlowTest {
 		ProcessInstance processInstance=processEngine.getRuntimeService().startProcessInstanceByKey
 				("workitem", workitem.getId().toString(),activtiMap);
 		/**完成第一步（提交申请）*/	
-		String sn="WORKITEM"+DateFormatUtils.format(new Date(),"_yyyy_MM_")+processInstance.getId();
+		String sn="SHIP"+DateFormatUtils.format(new Date(),"_yyyy_MM_")+processInstance.getId();
 		processEngine.getRuntimeService().setVariable(processInstance.getProcessInstanceId(), "sn", sn);
 		
 		List<Task> tasks = processEngine.getTaskService().createTaskQuery().
@@ -130,7 +127,7 @@ public class WorkFlowTest {
 		map.put("username", "汪曾祺");
 		map.put("taskname", "测试");
 		map.put("phone", "13773319204");
-		dayuSMSNofyServiceImpl.send(map);
+		//dayuSMSNofyServiceImpl.send(map);
 	}
 	/*public static void main(String arg[]){
 		Map map = new HashMap();

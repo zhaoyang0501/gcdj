@@ -52,7 +52,7 @@
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
-        <property name="packagesToScan" value="com.pzy.jcook.workflow.entity,com.pzy.jcook.sys.entity"/>
+        <property name="packagesToScan" value="com.pzy.jcook.project.entity,com.pzy.jcook.workflow.entity,com.pzy.jcook.sys.entity"/>
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
@@ -65,7 +65,7 @@
     </bean>
     
     <bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
-    <jpa:repositories base-package="com.pzy.jcook.sys.repository,com.pzy.jcook.workflow.repository" transaction-manager-ref="transactionManager"
+    <jpa:repositories base-package="com.pzy.jcook.project.repository,com.pzy.jcook.sys.repository,com.pzy.jcook.workflow.repository" transaction-manager-ref="transactionManager"
                       entity-manager-factory-ref="entityManagerFactory"/>
     
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />  

@@ -20,14 +20,39 @@
 								<i class="ace-icon fa fa-home home-icon"></i>
 								<a href="#">首页</a>
 							</li>
-							<li class="active" targeturl='${pageContext.request.contextPath}/user/index'>发货申请单</li>
+							<li class="active" targeturl='${pageContext.request.contextPath}/user/index'>发货申请单审核</li>
 						</ul>
 					</div>
 
 				<div class="page-content">
+						   <form class="form-horizontal" action="${pageContext.request.contextPath}/workflow/ship/doapprove/${task.id}/${prcessInstanceid}" method="post">
+			          
 						<div class="row">
+						
+						 <div class="col-sm-12">
+							 <ul class="steps"> 
+										<li data-step="1" class="active">
+											<span class="step">1</span>
+											<span class="title">提交申请单</span>
+										</li>
+	
+										<li data-step="2">
+											<span class="step">2</span>
+											<span class="title">领导审核</span>
+										</li>
+	
+										<li data-step="3">
+											<span class="step">3</span>
+											<span class="title">物流发货</span>
+										</li>
+	
+										<li data-step="4">
+											<span class="step">4</span>
+											<span class="title">任务结束</span>
+										</li>
+								</ul>
+						 </div>
                             <div class="col-sm-12 table-responsive">
-		                           <form class="form-horizontal" action="${pageContext.request.contextPath}/workflow/ship/create" method="post">
 		                           	<table class='table table-bordered'>
 		                           		<thead>
 		                           		<tr  ><th style="text-align: center;" colspan="2" >发货单</th></tr>
@@ -37,59 +62,56 @@
 		                           		  <tr>
 		                           				<td>货物类别</td>
 		                           				<td> 
-		                           				<label class="radio-inline">
-												  <input type="radio" name="type" id="" value="1">工具
-												</label>
-												<label class="radio-inline">
-												  <input type="radio" name="type" id="" value="2"> 耗材
-												</label>
+		                           				<c:if test="${bean.type==1 }">工具</c:if>
+		                           				<c:if test="${bean.type==2 }">耗材</c:if>
+		                           				
 		                           				</td>
 		                           			</tr>
 		                           		
 		                           		  <tr>
 		                           				<td>所属工程</td>
-		                           				<td> <input required="required" name='' type="text" class="form-control">	</td>
+		                           				<td>XX 工程		</td>
 		                           			</tr>
 		                           			
 		                           			
 		                           			
 		                           			<tr>
 		                           				<td>客户单位</td>
-		                           				<td> <input required="required" name='receiveName' type="text" class="form-control">	</td>
+		                           				<td>${bean.receiveName}		</td>
 		                           			</tr>
 		                           			<tr>
 		                           				<td>客户地址</td>
-		                           				<td> <input required="required" name='receiveAddr' type="text" class="form-control">	</td>
+		                           				<td> ${bean.receiveAddr }		</td>
 		                           			</tr>
 		                           			<tr>
 		                           				<td>联系人/电话</td>
-		                           				<td> <input required="required" name='receiveTel' type="text" class="form-control">	</td>
+		                           				<td>${bean.receiveTel }	</td>
 		                           			</tr>
 		                           			
 		                           			
 		                           			<tr>	
 		                           				<td>要求送达日期</td>
 		                           				<td>
-													<input   name='receiveDate' type="text" class="form-control input-group date" >
+													${bean.receiveDate }
 		                           				</td>
 		                           			</tr>
 		                           			
 		                           			<tr>	
 		                           				<td>领导意见</td>
-												<td> <textarea required="required" name='' rows="2" cols="" style="width: 100%" ></textarea></td>
+												<td>--同意</td>
 		                           			</tr>
 		                           			
 		                           			
 		                           			<tr>	
 		                           				<td>物流部门意见 </td>
-												<td> <textarea required="required" name='' rows="2" cols="" style="width: 100%" ></textarea></td>
+												<td> </td>
 		                           			</tr>
 		                           			
 		                           			
 		                           				
 		                           			<tr>	
 		                           				<td>备注说明</td>
-												<td> <textarea required="required" name='remark' rows="2" cols="" style="width: 100%" ></textarea></td>
+												<td> ${bean.remark }</td>
 		                           			</tr>
 		                           			
 		                           			<tr>
@@ -147,25 +169,34 @@
 									    				</ol>
 		                           				</td>
 		                           			</tr>
-		                           			<tr>
-		                           				<td colspan="6"> 
-		                           					 <div class="col-sm-4 col-sm-offset-2">
-		                                  			  		<button class="btn btn-primary" type="submit">提交</button>
-		                               				 </div>
-		                           				</td>
-		                           			</tr>
 		                           		</tbody>
 		                           	</table> 
-		                           	</form>
                             </div>
+                            
+                             <div class="col-sm-12 ">
+				                        <div class="page-header">
+											<h1>处理意见 </h1>
+										</div>
+										<div class="form-group">
+														 <label>意见</label>
+															<textarea id="approvals" name="approvals" rows="2"  style="widows: 100%"  class="form-control"></textarea>
+										</div>
+											
+													
+										 <div class="form-group">
+																    <button type="submit" class="btn btn-primary" onclick="$('#pass').val('true')">同意</button>
+															
+																	<button type="submit" class="btn  btn-warning" onclick="$('#pass').val('false')">不同意</button>
+										</div>
+									</div>	  
+									
+                              <div class="col-sm-12 table-responsive">
+									     <h5>流程信息</h5>
+											<%@include file="../history.jsp" %>
+		                      </div>
+                            
                         </div>
-				
-				
-				
-				   
-   
-				
-				<!-- /.page-content -->
+                        </form>
 			</div><!-- /.main-content -->
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
@@ -176,153 +207,29 @@
 			<c:if test="${response.code=='1'}">
 			  toastr.success('${response.msg}');
 			</c:if>
-	 var table=null;
-	    var tree;
-	    function submit_form(){
-	    	$.ajax({
-	    		   type: "POST",
-	    		   url:  $.common.getContextPath() + "/sys/deptment/save",
-	    		   data: $("form").serialize(),
-	    		   success: function(msg){
-	    		     if(msg.code==1){
-	    		    	 toastr.success('操作成功');
-	    		    	 window.location.reload();
-	    		     }
-	    		     layer.closeAll() ;
-	    		   }
-	    		});
-	     }
-	    
-	    function fun_delete(id){
-	    	layer.confirm('确定删除当前部门？', {
-	    		  btn: ['确定','取消'] //按钮
-	    		}, function(){
-	    			$.ajax({
-	    		 		   url:  $.common.getContextPath() + "/sys/deptment/delete?id="+id,
-	    		 		   success: function(msg){
-	    		 		     if(msg.code==1){
-	    		 		    	 toastr.success('操作成功');
-	    		 		    	window.location.reload();
-	    		 		     }
-	    		 		     layer.closeAll() ;
-	    		 		   }
-	    		 	});
-	    		}, function(){
-	    			 layer.closeAll() ;
-	    		});
-	     }
-	   
-	    function fun_update(id){
-	    	$.ajax({
-	 		   url:  $.common.getContextPath() + "/sys/deptment/get?id="+id,
-	 		   success: function(msg){
-	 		     if(msg.code==1){
-	 		    	$("input[name='id']").val(msg.datas.id);
-	 		    	$("input[name='name']").val(msg.datas.name);
-	 		    	$("radio[name='tel']").val(msg.datas.tel);
-	 		   		$("input[name='manger']").val(msg.datas.manger);
-	 				$("input[name='tel']").val(msg.datas.tel);
-	 				$("input[name='code']").val(msg.datas.code);
-	 				$("select[name='parent.id']").val(msg.datas.parent.id);
-	 		    	layer.open({
-	      			  type: 1,
-	      			  skin: 'layui-layer-rim', 
-	      			  content: $("#_form"),
-	      			  area: "800px"
-	      			});
-	 		     }
-	 		   }
-	 		});
-	     }
-	    
-	    function init_dept_tree(){
-	    	$.ajax({
-		 		   url:  $.common.getContextPath() + "/sys/deptment/alldeptments",
-		 		   success: function(msg){
-		 			  tree = $('#jstree_demo_div').jstree({
-		 			 		'core' : {
-		 			 			"multiple" : false,
-		 			 		  'data' : msg
-		 			 		}}).on('changed.jstree', function (e, data) {
-		 			 			console.info(data.node.id);
-		 			 			$("#deptid").val(data.node.id);
-		 			 			 table.draw();
-		 			 		  });
-		 			   
-		 		   }
-		 	});
-	    }
-	   
+	
 	    $(document).ready(function(){
-	    	init_dept_tree();
-	        	$("#_new").click(function(){
-	        		$("input[name='id']").val("");
-	 		    	$("input[name='name']").val("");
-	 		    	$("radio[name='code']").val("");
-	 		   		$("input[name='tel']").val("");
-	 				$("input[name='manger']").val("");
-	 				$("select[name='parent']").val("");
-	        		layer.open({
-	        			  type: 1,
-	        			  skin: 'layui-layer-rim', //加上边框
-	        			  content: $("#_form"),
-	        			  area: "900px"
-	        			});
-	        	});
-	        	table=$('#dt_table_view').DataTable( {
-	        		"dom": "rt<'row'<'col-sm-5'i><'col-sm-7'p>>",
-		            "ajax": {
-		                "url":  $.common.getContextPath() + "/sys/deptment/listall",
-		                "type": "POST",
-		                "dataSrc": "datas"
-		              },
-					"columns" : [{
-						"data" : "name"
-					}, {
-						"data" : "code"
-					},{
-						"data" : "tel",
-					},{
-						"data" : "manger",
-					},{
-						"data" : "parent",
-					},{
-						"data" : "id",
-					}] ,
-					 "columnDefs": [
-									{
-									    "render": function ( data, type, row ) {
-									        if(row.parent!=null)
-									        	return row.parent.name;
-									        else return "";
-									        	
-									    },
-									    "targets":4
-									}, 
-					                {
-					                    "render": function ( data, type, row ) {
-					                    	 return "<a tager='_blank' href='javascript:void(0)' onclick='fun_delete("+data+")'>删除 </a>"+
-						                        	"<a tager='_blank' href='javascript:void(0)' onclick='fun_update("+data+")'>编辑 </a>";
-					                    },
-					                    "targets":5
-					                }
-					               
-					            ],
-	        		"initComplete": function () {
-	        			var api = this.api();
-	        			$("#_search").on("click", function(){
-	            		 	api.draw();
-	        			} );
-	        		} 
-	        	 } ).on('preXhr.dt', function ( e, settings, data ) {
-			        	data.name = $("#_name").val();
-			        	data.deptid = $("#deptid").val();
-			        	return true;
-			     } ).on('xhr.dt', function ( e, settings, json, xhr ) {
-			    		 $(".dataTables_processing").hide();	
-			     } )
-	        });
-	    $(document).ready(function(){
+	    	if("${task.name}"=='提交任务'){
+	    		$(".steps li").removeClass("active");
+	    		$(".steps li").eq(0).addClass("active");
+	    	}
+	    	else if("${task.name}"=='工程部审核'||"${task.name}"=='总经理审核'){
+	    		$(".steps li").removeClass("active");
+	    		$(".steps li").eq(0).addClass("active");
+	    		$(".steps li").eq(1).addClass("active");
+	    	}else if("${task.name}"=='物流发货'){
+	    		$(".steps li").removeClass("active");
+	    		$(".steps li").eq(0).addClass("active");
+	    		$(".steps li").eq(1).addClass("active");
+	    		$(".steps li").eq(2).addClass("active");
+	    	}else{
+	    		$(".steps li").removeClass("active");
+	    		$(".steps li").eq(0).addClass("active");
+	    		$(".steps li").eq(1).addClass("active");
+	    		$(".steps li").eq(2).addClass("active");
+	    		$(".steps li").eq(3).addClass("active");
+	    	}
+	    	
 	    	$(".nav-list li").removeClass("active");
 	    	$(".submenu a[href='${pageContext.request.contextPath}/workflow/ship/create']").parent().addClass("active");
 	    });

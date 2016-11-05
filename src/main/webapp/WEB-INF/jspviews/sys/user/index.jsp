@@ -69,9 +69,8 @@
 				
 				
 				
-				   <div id='_form' style="display: none;">
- 		 <div class="row">
-                            <div class="col-sm-12 table-responsive ">
+ 		 				<div class="row" id='_form' style="display: none;">
+                            <div class="col-sm-12  ">
 		                           <form  id='form_' class="form-horizontal" action="" method="get">
 		                           <input name='id' type="hidden"/>
 		                           	<table class='table table-bordered'>
@@ -153,7 +152,6 @@
 		                           	</table>
 		                           	</form>
                             </div>
-                        </div>
    </div>
    
 				
@@ -187,7 +185,7 @@
     	if(!form_.form()) return ;
     	$.ajax({
     		   type: "POST",
-    		   url:  $.common.getContextPath() + "/user/save",
+    		   url:  $.common.getContextPath() + "/sys/user/save",
     		   data: $("form").serialize(),
     		   success: function(msg){
     		     if(msg.code==1){
@@ -205,7 +203,7 @@
     		  btn: ['确定','取消'] //按钮
     		}, function(){
     			$.ajax({
-    		 		   url:  $.common.getContextPath() + "/user/delete?id="+id,
+    		 		   url:  $.common.getContextPath() + "/sys/user/delete?id="+id,
     		 		   success: function(msg){
     		 		     if(msg.code==1){
     		 		    	 toastr.success('操作成功');
@@ -223,7 +221,7 @@
     
     function fun_update(id){
     	$.ajax({
- 		   url:  $.common.getContextPath() + "/user/get?id="+id,
+ 		   url:  $.common.getContextPath() + "/sys/user/get?id="+id,
  		   success: function(msg){
  		     if(msg.code==1){
  		    	$("input[name='id']").val(msg.datas.id);
@@ -269,7 +267,7 @@
         	table=$('#dt_table_view').DataTable( {
         		"dom": "rt<'row'<'col-sm-5'i><'col-sm-7'p>>",
 	            "ajax": {
-	                "url":  $.common.getContextPath() + "/user/list",
+	                "url":  $.common.getContextPath() + "/sys/user/list",
 	                "type": "POST",
 	                "dataSrc": "datas"
 	              },
@@ -313,6 +311,8 @@
         		"initComplete": function () {
         			var api = this.api();
         			$("#_search").on("click", function(){
+        				alert();
+        				
             		 	api.draw();
         			} );
         		} 
@@ -326,7 +326,7 @@
         });
     $(document).ready(function(){
     	$(".nav-list li").removeClass("active");
-    	$(".nav-list a[href='"+$(".breadcrumb li[targeturl]").attr("targeturl")+"']").parent().addClass("active");
+    	$(".submenu a[href='${pageContext.request.contextPath}/sys/user/index']").parent().addClass("active");
     });
     </script>
     	</body>

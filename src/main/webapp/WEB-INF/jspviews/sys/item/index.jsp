@@ -325,6 +325,12 @@
 			    		 $(".dataTables_processing").hide();	
 			     } )
 	        });
+	    
+	    
+	    $(document).ready(function(){
+	    	$(".nav-list li").removeClass("active");
+	    	$(".submenu a[href='${pageContext.request.contextPath}/sys/item/index']").parent().addClass("active");
+	    });
     </script>
     <script src="${pageContext.request.contextPath}/js/plugins/jsTree/jstree.min.js"></script>
 	</body>
