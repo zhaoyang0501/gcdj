@@ -95,7 +95,7 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="${pageContext.request.contextPath}/assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
-									<small>欢迎,${currentUser.chinesename }</small>
+										<small>欢迎,${currentUser.chinesename }</small>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -137,6 +137,35 @@
 				<ul class="nav nav-list">
 				<li class=" open">
 						<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> 工作流 </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/tasktodo"> <i
+									class="menu-icon fa fa-calendar"></i> <span class="menu-text">
+										我的待办 </span>
+							</a> <b class="arrow"></b>
+							</li>
+	
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/taskdone"> <i
+									class="menu-icon fa fa-briefcase"></i> <span class="menu-text">
+										我的已办 </span>
+							</a> <b class="arrow"></b>
+							</li>
+	
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/ship/create"> <i
+									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
+										发货申请单</span>
+							</a> <b class="arrow"></b>
+							</li>
+							
+						</ul>
+					</li>
+				
+				<li class=" open">
+						<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-list"></i>
 							<span class="menu-text"> 系统设置 </span>
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
@@ -164,34 +193,7 @@
 				
 				
 				
-				<li class=" open">
-						<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> 工作流 </span>
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-						<ul class="submenu">
-							<li class=""><a href="${pageContext.request.contextPath}/workflow/tasktodo"> <i
-									class="menu-icon fa fa-calendar"></i> <span class="menu-text">
-										我的待办 </span>
-							</a> <b class="arrow"></b>
-							</li>
-	
-							<li class=""><a href="${pageContext.request.contextPath}/workflow/taskdone"> <i
-									class="menu-icon fa fa-briefcase"></i> <span class="menu-text">
-										我的已办 </span>
-							</a> <b class="arrow"></b>
-							</li>
-	
-							<li class=""><a href="${pageContext.request.contextPath}/ship/create"> <i
-									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
-										发货申请单</span>
-							</a> <b class="arrow"></b>
-							</li>
-							
-						</ul>
-					</li>
+				
 				</ul>
 				<!-- /.nav-list -->
 	
@@ -202,6 +204,7 @@
 			<!--  end menu-->
 			
 			<decorator:body />
+			
 		</div>
 	</body>
 </html>

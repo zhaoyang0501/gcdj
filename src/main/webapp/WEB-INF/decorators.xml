@@ -6,6 +6,7 @@
     <decorator name="main" page="main.jsp">
         <pattern>/sys/*</pattern>
         <pattern>/workflow/*</pattern>
+        <pattern>/workflow/*</pattern>
     </decorator>
 
 

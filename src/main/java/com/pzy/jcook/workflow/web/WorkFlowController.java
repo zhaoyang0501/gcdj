@@ -78,7 +78,7 @@ public class WorkFlowController {
 			throw new RuntimeException("该任务已经被完成或者不存在，请返回！");
 		}
 		String prefix=processInstance.getProcessDefinitionKey();
-		return "redirect:/" +prefix+"/task/"+taskid+"/"+processInstanceId;
+		return "redirect:/workflow/" +prefix+"/task/"+taskid+"/"+processInstanceId;
 	}
 	
 	@RequestMapping("/taskhistory/{processInstanceId}")
@@ -86,7 +86,7 @@ public class WorkFlowController {
 		HistoricProcessInstance processInstance = processEngine.getHistoryService().createHistoricProcessInstanceQuery().processInstanceId(processInstanceId).singleResult();
 		Assert.notNull(processInstance,"参数错误或者流程不存在");
 		String prefix=processEngine.getRepositoryService().getProcessDefinition(processInstance.getProcessDefinitionId()).getKey();;
-		return "redirect:/" +prefix+"/taskhistory/"+processInstanceId ;	
+		return "redirect:/workflow/" +prefix+"/taskhistory/"+processInstanceId ;	
 	}
 	
 }
