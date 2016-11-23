@@ -65,7 +65,7 @@ public class LoginController {
 		 log.info("index----------isAuthenticated------------"+subject.isAuthenticated());
 		 User user = (User)SecurityUtils.getSubject().getSession().getAttribute("currentUser");
     	 log.info("index----------oauth2-----------inde get---"+user);
-		return "index";
+		return "redirect:/workflow/tasktodo";
 	}
 	
 	@RequestMapping(value = "/binduser", method = RequestMethod.GET)
