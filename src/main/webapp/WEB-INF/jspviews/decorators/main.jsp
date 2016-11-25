@@ -188,6 +188,11 @@
 								<b class="arrow"></b>
 							</li>
 							
+							<li >
+								<a href="${pageContext.request.contextPath}/project/project/index"><i class="menu-icon fa  fa-check-square-o"></i>工程登记管理</a>
+								<b class="arrow"></b>
+							</li>
+							
 						</ul>
 					</li>
 				

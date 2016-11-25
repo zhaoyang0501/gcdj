@@ -47,7 +47,7 @@ public class ItemController extends AbstractBaseCURDController<Item,Long>  {
 	}
 	
 	@Override
-	String getBasePath() {
+	protected String getBasePath() {
 		return "sys/item";
 	}
 	

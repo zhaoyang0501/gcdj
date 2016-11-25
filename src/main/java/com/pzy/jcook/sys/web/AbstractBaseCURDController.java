@@ -29,7 +29,7 @@ public abstract  class AbstractBaseCURDController<M extends BaseEntity<?>, ID ex
 		this.baseService = baseService;
 	}
 
-	abstract String getBasePath();
+	protected abstract String getBasePath();
 	
 	@Override
 	@RequestMapping("index")

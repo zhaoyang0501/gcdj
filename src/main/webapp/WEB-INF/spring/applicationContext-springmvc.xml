@@ -34,7 +34,7 @@
 		<beans:property name="contentType" value="text/html;charset=UTF-8" />
 	</beans:bean>
 
-	<context:component-scan base-package="com.pzy.jcook.workflow.web,com.pzy.jcook.sys.web" />
+	<context:component-scan base-package="com.pzy.jcook.workflow.web,com.pzy.jcook.sys.web,com.pzy.jcook.project.web" />
 	
 	<beans:bean id="messageSource"   class="org.springframework.context.support.ResourceBundleMessageSource">  
     	<beans:property name="basename" value="messages" />  

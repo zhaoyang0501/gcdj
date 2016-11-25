@@ -55,7 +55,7 @@ public class UserController extends AbstractBaseCURDController<User,Long>  {
 		return this.getBasePath()+"/changepw";
 	}
 	@Override
-	String getBasePath() {
+	protected String getBasePath() {
 		return "sys/user";
 	}
 	
