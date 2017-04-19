@@ -58,50 +58,55 @@
 
 				<div class="page-content">
 						<div class="row">
-							<div class="col-xs-12">
-								<form  id='_form' class="form-horizontal" role="form" method="post" action="${pageContext.request.contextPath}/user/changepw" >
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">原始密码 </label>
-
-										<div class="col-sm-9">
-											<input type="password" name='oldpw'placeholder="原始密码 " class="col-xs-10 col-sm-5">
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 新密码</label>
-
-										<div class="col-sm-9">
-											<input type="password" name='newpw'  placeholder="新密码" class="col-xs-10 col-sm-5">
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 新密码确认</label>
-
-										<div class="col-sm-9">
-											<input type="password" name='newpwa' placeholder="新密码确认"  class="col-xs-10 col-sm-5">
-										</div>
-									</div>
-									
-									
-									<div class="clearfix form-actions">
-										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="submit">
-												<i class="ace-icon fa fa-check bigger-110"></i>
-												提交
-											</button>
-
-											&nbsp; &nbsp; &nbsp;
-											<button class="btn" type="reset">
-												<i class="ace-icon fa fa-undo bigger-110"></i>
-												取消
-											</button>
-										</div>
-									</div>
-								</form>
-						</div>
-				</div>
+                            <div class="col-sm-12 b-r">
+		                           <form  class="form-horizontal" action="${pageContext.request.contextPath}/admin/center/docenterpassword" method="post">
+		                           	<input type="hidden" name="id" value="${task.id }"/>
+		                           	<table class='table table-bordered'>
+		                           		<thead>
+		                           		<tr style="text-align: center;" ><td colspan="6" ><h3>修改密码<h3></h3></td></tr>
+		                           		</thead>
+		                           		<tbody>
+		                           			<tr>
+		                           				<td>用户名</td>
+		                           				<td>${sessionScope.adminuser.username }</td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>电话</td>
+		                           				<td>${sessionScope.adminuser.tel }</td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>地址</td>
+		                           				<td>${sessionScope.adminuser.address }</td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>邮箱</td>
+		                           				<td>${sessionScope.adminuser.email }</td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>旧密码</td>
+		                           				<td> <input name='oldpassword' type="password" class="form-control"></td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>新密码</td>
+		                           				<td> <input name='newpassword' type="password" class="form-control"></td>
+		                           			</tr>
+		                           				<tr>
+		                           				<td>新密码确认</td>
+		                           				<td> <input name='newpasswordtwo' type="password" class="form-control"></td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td colspan="6"> 
+		                           					 <div class="col-sm-4 col-sm-offset-2">
+		                                  			  		<button class="btn btn-primary" type="submit">确认修改</button>
+		                                   				    <button class="btn btn-white" type="submit">取消</button>
+		                               				 </div>
+		                           				</td>
+		                           			</tr>
+		                           		</tbody>
+		                           	</table> 
+		                           	</form>
+                            </div>
+                        </div>
 				
 			<!-- /.page-content -->
 			</div><!-- /.main-content -->
