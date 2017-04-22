@@ -13,6 +13,7 @@ public class JacksonObjectMapper  extends ObjectMapper {
         this.getSerializerProvider().setNullValueSerializer(new NullValueSerializer());
     }
 	
+	
     public  class NullValueSerializer extends JsonSerializer<Object> {
 		@Override
 		public void serialize(Object value,
