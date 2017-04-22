@@ -56,7 +56,7 @@
 											<th>备用电话</th>
 											<th>电子邮件</th>
 											<th>责任区域</th>
-											<th>微信绑定</th>
+											<th>所属部门</th>
 											<th>操作</th>
 										</tr>
 		                            </thead>
@@ -119,7 +119,16 @@
 		                           				<td> <textarea name='remark' rows="4" cols="" style="width: 80%"></textarea></td>
 		                           			</tr>
 		                           			
-		                           			
+		                           			<tr>
+		                           				<td>所属部门</td>
+		                           				<td>
+												<select name='deptment.id' class=" form-control">
+												  	<c:forEach var="bean" items="${deptmentselects}">
+												  		<option value="${bean.id }">${bean.text }</option>
+												  	</c:forEach>
+												  </select>
+		                           				</td>
+		                           			</tr>
 		                           			<tr>
 		                           				<td>角色</td>
 		                           				<td > 
@@ -286,17 +295,14 @@
 				},{
 					"data" : "remark",
 				},{
-					"data" : "openid",
+					"data" : "deptment.name",
 				},{
 					"data" : "id",
 				}] ,
 				 "columnDefs": [
 				                { "render": function ( data, type, row ) {
-			                    	if(data==''||data==null)
-				                       	 return  "<span class='label label-danger '>未绑定</span>";
-				                        else
-				                        	return  "<span class='label label-primary'>已绑定</span>";
-				                    },
+				                        	return  "<span class='label label-primary'>"+data+"</span>";
+				                        	},
 				                    "targets":7
 				                },
 				                {

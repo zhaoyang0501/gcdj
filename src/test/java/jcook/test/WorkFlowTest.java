@@ -70,7 +70,7 @@ public class WorkFlowTest {
 	}
 	@Test
 	public void deploy(){
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream("processes/ship.zip");  
+		InputStream in = this.getClass().getClassLoader().getResourceAsStream("processes/overtime.zip");  
 	    ZipInputStream zipInputStream = new ZipInputStream(in);  
 	    Deployment deployment = processEngine.getRepositoryService()
 	                    .createDeployment()

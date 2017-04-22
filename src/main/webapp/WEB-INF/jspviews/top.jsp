@@ -14,7 +14,7 @@
 					<a href="index.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							中东分局任务分配系统
+							公司考勤系统
 						</small>
 					</a>
 				</div>

@@ -22,7 +22,7 @@
 	
 					<li class=""><a href="${pageContext.request.contextPath}/workitem/create"> <i
 							class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
-								任务申请</span>
+								请假申请</span>
 					</a> <b class="arrow"></b></li>
 	
 					<li class=""><a href="${pageContext.request.contextPath}/user/index"> <i

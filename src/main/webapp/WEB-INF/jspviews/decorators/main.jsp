@@ -102,7 +102,7 @@
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
+								<!--  <li>
 									<a href="${pageContext.request.contextPath}/center">
 										<i class="ace-icon fa fa-cog"></i>
 										个人信息
@@ -115,7 +115,7 @@
 										修改密码
 									</a>
 								</li>
-
+-->
 								<li class="divider"></li>
 								<li>
 									<a href="${pageContext.request.contextPath}/loginout">
@@ -155,12 +155,29 @@
 							</a> <b class="arrow"></b>
 							</li>
 	
-							<li class=""><a href="${pageContext.request.contextPath}/workflow/ship/create"> <i
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/dayoff/create"> <i
 									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
-										发货申请单</span>
+										请假申请</span>
 							</a> <b class="arrow"></b>
 							</li>
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/overtime/create"> <i
+									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
+										加班申请</span>
+							</a> <b class="arrow"></b>
 							
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/dayoff/index"> <i
+									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
+										请假单查询</span>
+							</a> <b class="arrow"></b>
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/overtime/index"> <i
+									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
+										加班单查询</span>
+							</a> <b class="arrow"></b>
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/check/index"> <i
+									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
+										工时报表</span>
+							</a> <b class="arrow"></b>
+							</li>
 						</ul>
 					</li>
 				
@@ -182,7 +199,7 @@
 								<a href="${pageContext.request.contextPath}/sys/deptment/index"><i class="menu-icon fa fa-folder-open"></i>部门管理</a>
 								<b class="arrow"></b>
 							</li>
-							
+							<!--
 							<li  class="active">
 								<a href="${pageContext.request.contextPath}/sys/item/index"><i class="menu-icon fa  fa-check-square-o"></i>物品清单维护</a>
 								<b class="arrow"></b>
@@ -192,7 +209,7 @@
 								<a href="${pageContext.request.contextPath}/project/project/index"><i class="menu-icon fa  fa-check-square-o"></i>工程登记管理</a>
 								<b class="arrow"></b>
 							</li>
-							
+							  -->
 						</ul>
 					</li>
 				

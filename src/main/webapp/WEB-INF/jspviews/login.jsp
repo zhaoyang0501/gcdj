@@ -53,7 +53,7 @@
 								<h1>
 									<i class="icon-leaf green"></i>
 									<span class="red">XX公司</span>
-									<span class="white">工程管理系统</span>
+									<span class="white">公司考勤系统</span>
 								</h1>
 							</div>
 

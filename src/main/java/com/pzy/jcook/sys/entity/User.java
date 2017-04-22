@@ -3,6 +3,8 @@ package com.pzy.jcook.sys.entity;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,6 +30,9 @@ public class User extends BaseEntity<Long>{
 	private String sex;
 	
 	private String openid;
+	
+	@ManyToOne
+	private  Deptment deptment;
 	
 	@OneToMany
 	private Set<Role> roles;
@@ -91,6 +96,12 @@ public class User extends BaseEntity<Long>{
 	}
 	public void setOpenid(String openid) {
 		this.openid = openid;
+	}
+	public Deptment getDeptment() {
+		return deptment;
+	}
+	public void setDeptment(Deptment deptment) {
+		this.deptment = deptment;
 	}
 	
 	

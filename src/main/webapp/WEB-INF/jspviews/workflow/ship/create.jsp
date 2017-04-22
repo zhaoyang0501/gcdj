@@ -20,7 +20,7 @@
 								<i class="ace-icon fa fa-home home-icon"></i>
 								<a href="#">首页</a>
 							</li>
-							<li class="active" targeturl='${pageContext.request.contextPath}/user/index'>发货申请单</li>
+							<li class="active" targeturl='${pageContext.request.contextPath}/user/index'>请假单申请</li>
 						</ul>
 					</div>
 
@@ -30,127 +30,90 @@
 		                           <form class="form-horizontal" action="${pageContext.request.contextPath}/workflow/ship/create" method="post">
 		                           	<table class='table table-bordered'>
 		                           		<thead>
-		                           		<tr  ><th style="text-align: center;" colspan="2" >发货单</th></tr>
+		                           		<tr  ><th style="text-align: center;" colspan="4" >请假单</th></tr>
 		                           		</thead>
 		                           		<tbody>
 		                           		
+		                           		  
 		                           		  <tr>
-		                           				<td>货物类别</td>
-		                           				<td> 
-		                           				<label class="radio-inline">
-												  <input type="radio" name="type" id="" value="1">工具
-												</label>
-												<label class="radio-inline">
-												  <input type="radio" name="type" id="" value="2"> 耗材
-												</label>
-		                           				</td>
-		                           			</tr>
-		                           		
-		                           		  <tr>
-		                           				<td>所属工程</td>
-		                           				<td> <input required="required" name='' type="text" class="form-control">	</td>
-		                           			</tr>
-		                           			
-		                           			
-		                           			
-		                           			<tr>
-		                           				<td>客户单位</td>
-		                           				<td> <input required="required" name='receiveName' type="text" class="form-control">	</td>
-		                           			</tr>
-		                           			<tr>
-		                           				<td>客户地址</td>
-		                           				<td> <input required="required" name='receiveAddr' type="text" class="form-control">	</td>
-		                           			</tr>
-		                           			<tr>
-		                           				<td>联系人/电话</td>
-		                           				<td> <input required="required" name='receiveTel' type="text" class="form-control">	</td>
-		                           			</tr>
-		                           			
-		                           			
-		                           			<tr>	
-		                           				<td>要求送达日期</td>
+		                           				<td>部门：</td>
 		                           				<td>
-													<input   name='receiveDate' type="text" class="form-control input-group date" >
-		                           				</td>
-		                           			</tr>
-		                           			
-		                           			<tr>	
-		                           				<td>领导意见</td>
-												<td> <textarea required="required" name='' rows="2" cols="" style="width: 100%" ></textarea></td>
-		                           			</tr>
-		                           			
-		                           			
-		                           			<tr>	
-		                           				<td>物流部门意见 </td>
-												<td> <textarea required="required" name='' rows="2" cols="" style="width: 100%" ></textarea></td>
-		                           			</tr>
-		                           			
-		                           			
+		                           				<select name='deptment.id' class=" form-control">
+												  	<c:forEach var="bean" items="${deptmentselects}">
+												  		<option value="${bean.id }">${bean.text }</option>
+												  	</c:forEach>
+												  </select>
 		                           				
-		                           			<tr>	
-		                           				<td>备注说明</td>
-												<td> <textarea required="required" name='remark' rows="2" cols="" style="width: 100%" ></textarea></td>
+		                           				</td>
+		                           				<td>姓名：</td>
+		                           				<td><input required="required" name='chinesename' type="text" class="form-control"></td>
+		                           			</tr>
+		                           			
+		                           			 
+		                           		  <tr>
+		                           				<td>工号：</td>
+		                           				<td><input required="required" name='username' type="text" class="form-control"></td>
+		                           				<td>电话：</td>
+		                           				<td><input required="required" name='tel' type="text" class="form-control"></td>
 		                           			</tr>
 		                           			
 		                           			<tr>
-		                           				
-		                           				<td colspan="2">
-		                           				<h4 style="text-align: center; " class="widget-title lighter smaller"><b>发货清单</b> </h4>	
-													 <table class='table table-bordered'>
-						                           		<thead>
-						                           			<tr>
-						                           				<th width="30px;"><button id="addRow">＋</button></th>
-						                           				<th>序号</th>
-						                           				<th>类别</th>
-						                           				<th>名称</th>
-						                           				<th>数量</th>
-						                           			</tr>
-						                           		</thead>
-						                           		<tbody>
-						                           		  <tr>
-						                           		  <td width="30px;"><button id="addRow" >-</button></td>
-						                           		  		<td>1</td>
-						                           				<td>耗材</td>
-						                           				<td>水泥</td>
-						                           				<td>17包</td>
-						                           		  </tr>
-						                           		  <tr>
-						                           		  		<td width="30px;"><button id="addRow" >-</button></td>
-						                           		  		<td>2</td>
-						                           				<td>耗材</td>
-						                           				<td>钢筋</td>
-						                           				<td>12包</td>
-						                           		  </tr>
-						                           		  <tr> 
-						                           		  		<td width="30px;"><button id="addRow" >-</button></td>
-						                           		  		<td>3</td>
-						                           				<td>XX砂石</td>
-						                           				<td>水泥</td>
-						                           				<td>12包</td>
-						                           		  </tr>
-						                           		  </tbody>
-					                           		  </table>
+		                           				<td>请假时间起：</td>
+		                           				<td><input   name='receiveDate' type="text" class="form-control input-group date" ></td>
+		                           				<td>请假时间止：</td>
+		                           				<td><input   name='receiveDate' type="text" class="form-control input-group date" ></td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>共计小时：</td>
+		                           				<td ><input   name='receiveDate' type="text" class="form-control input-group date" ></td>
+		                           			
+		                           			
+		                           				<td>请假类型</td>
+		                           				<td> 
+													<label class="radio-inline">
+													  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 病假
+													</label>
+													<label class="radio-inline">
+													  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 调休假
+													</label>
+													<label class="radio-inline">
+													  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">工伤假
+													</label>
+													
+													<label class="radio-inline">
+													  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">事假
+													</label>
+													
+													<label class="radio-inline">
+													  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">丧假
+													</label>
 													
 		                           				</td>
 		                           			</tr>
-		                           			
-		                           			
+		                           			<tr>	
+		                           				<td>请假原因</td>
+												<td colspan="3"> <textarea required="required" name='remark' rows="2" cols="" style="width: 100%" ></textarea></td>
+		                           			</tr>
+		                           			<tr>	
+		                           				<td>领导意见</td>
+												<td colspan="3"> <textarea required="required" name='' rows="2" cols="" style="width: 100%" ></textarea></td>
+		                           			</tr>
 		                           			
 		                           			
 		                           			<tr>
 		                           				<td>提示</td>
-		                           				<td > 
+		                           				<td colspan="3" > 
 		                           					 <h4>提示</h4>
 		                               					 <ol>
-									    					<li>工具类由部门经理审核完成</li>
-									    					<li>耗材类由总经理审核</li>
+									    					<li>必须在请假前申请</li>
+									    					<li>必须审核通过才能休假</li>
 									    				</ol>
 		                           				</td>
 		                           			</tr>
 		                           			<tr>
 		                           				<td colspan="6"> 
 		                           					 <div class="col-sm-4 col-sm-offset-2">
-		                                  			  		<button class="btn btn-primary" type="submit">提交</button>
+		                                  			  		<button class="btn btn-primary" type="submit">提交假单</button>
 		                               				 </div>
 		                           				</td>
 		                           			</tr>
