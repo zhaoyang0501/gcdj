@@ -49,5 +49,11 @@ public class CheckDTO {
 		this.hours = hours;
 	}
 	
-	
+	public CheckDTO(String user, String deptment, Long num, Long hours) {
+		super();
+		this.user = user;
+		this.deptment = deptment;
+		this.num = num;
+		this.hours = new Double(hours);
+	}
 }

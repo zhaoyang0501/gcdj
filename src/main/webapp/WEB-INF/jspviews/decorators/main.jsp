@@ -178,6 +178,18 @@
 										工时报表</span>
 							</a> <b class="arrow"></b>
 							</li>
+							
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/dayoff/reportindex"> <i
+									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
+										请假统计报表</span>
+							</a> <b class="arrow"></b>
+							</li>
+							
+							<li class=""><a href="${pageContext.request.contextPath}/workflow/overtime/reportindex"> <i
+									class="menu-icon fa  fa-pencil-square-o"></i> <span class="menu-text">
+										加班统计报表</span>
+							</a> <b class="arrow"></b>
+							</li>
 						</ul>
 					</li>
 				

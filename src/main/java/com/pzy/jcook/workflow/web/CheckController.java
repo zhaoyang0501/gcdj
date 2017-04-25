@@ -109,8 +109,7 @@ public class CheckController extends AbstractBaseCURDController<Check,Long> {
 		return new DataTableResponse<CheckDTO>( m,5 );
 	}
 	
-	
-	
+
 	@Override
 	protected String getBasePath() {
 		return "workflow/check";

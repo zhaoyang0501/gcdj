@@ -49,6 +49,7 @@ import com.pzy.jcook.sys.entity.User;
 import com.pzy.jcook.sys.service.DeptmentService;
 import com.pzy.jcook.sys.service.UserService;
 import com.pzy.jcook.sys.web.AbstractBaseCURDController;
+import com.pzy.jcook.workflow.dto.CheckDTO;
 import com.pzy.jcook.workflow.entity.Overtime;
 import com.pzy.jcook.workflow.service.OvertimeService;
 import com.pzy.jcook.workflow.service.WorkFlowService;
@@ -262,5 +263,18 @@ public class OvertimeController extends AbstractBaseCURDController<Overtime,Long
 			user = this.getBaseService().find(id);
 		}
 		return user;
+	}
+	
+	
+	@RequestMapping("reportindex")
+	public String reportindex() {
+		return "workflow/overtime/reportindex";
+	}
+	
+	@RequestMapping("report")
+	@ResponseBody
+	public Response report(Integer start, Integer length,Date s,Date e) {
+		List<CheckDTO> m = this.overtimeService.findChecks(s, e);
+		return new DataTableResponse<CheckDTO>( m,5 );
 	}
 }

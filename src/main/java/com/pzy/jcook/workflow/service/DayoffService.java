@@ -1,5 +1,6 @@
 package com.pzy.jcook.workflow.service;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -17,6 +18,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.pzy.jcook.sys.service.BaseService;
+import com.pzy.jcook.workflow.dto.CheckDTO;
 import com.pzy.jcook.workflow.entity.DayOff;
 import com.pzy.jcook.workflow.entity.Ship;
 import com.pzy.jcook.workflow.repository.DayoffRepository;
@@ -53,6 +55,12 @@ public class DayoffService extends BaseService< DayOff, Long> {
         };
         Page<DayOff> result = (Page<DayOff>) baseRepository.findAll(spec, pageRequest);
         return result;
+	}
+
+
+
+	public List<CheckDTO> findChecks(Date s, Date e) {
+		return this.dayoffRepository.findRank(s, e);
 	} 
 	
 }

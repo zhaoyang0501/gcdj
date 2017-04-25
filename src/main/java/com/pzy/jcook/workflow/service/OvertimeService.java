@@ -1,5 +1,6 @@
 package com.pzy.jcook.workflow.service;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -16,6 +17,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.pzy.jcook.sys.service.BaseService;
+import com.pzy.jcook.workflow.dto.CheckDTO;
 import com.pzy.jcook.workflow.entity.Overtime;
 import com.pzy.jcook.workflow.entity.Overtime;
 import com.pzy.jcook.workflow.repository.OvertimeRepository;
@@ -52,5 +54,10 @@ public class OvertimeService extends BaseService< Overtime, Long> {
         Page<Overtime> result = (Page<Overtime>) baseRepository.findAll(spec, pageRequest);
         return result;
 	} 
+	
+	public List<CheckDTO> findChecks(Date s, Date e) {
+		return this.overtimeRepository.findRank(s, e);
+	} 
+	
 	
 }

@@ -49,6 +49,7 @@ import com.pzy.jcook.sys.entity.User;
 import com.pzy.jcook.sys.service.DeptmentService;
 import com.pzy.jcook.sys.service.UserService;
 import com.pzy.jcook.sys.web.AbstractBaseCURDController;
+import com.pzy.jcook.workflow.dto.CheckDTO;
 import com.pzy.jcook.workflow.entity.DayOff;
 import com.pzy.jcook.workflow.service.DayoffService;
 import com.pzy.jcook.workflow.service.WorkFlowService;
@@ -94,6 +95,20 @@ public class DayoffController extends AbstractBaseCURDController<DayOff,Long> {
 		model.addAttribute("deptmentselects",deptmentselect);
 		return "workflow/dayoff/create";
 	}
+	
+	@RequestMapping("reportindex")
+	public String reportindex() {
+		return "workflow/dayoff/reportindex";
+	}
+	
+	@RequestMapping("report")
+	@ResponseBody
+	public Response report(Integer start, Integer length,Date s,Date e) {
+		
+		List<CheckDTO> m = this.dayoffService.findChecks(s, e);
+		return new DataTableResponse<CheckDTO>( m,5 );
+	}
+	
 	@RequestMapping(value = "create", method = RequestMethod.POST)
 	public String create(DayOff ship,Model model) {
 		
