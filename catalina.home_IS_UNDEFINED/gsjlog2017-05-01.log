@@ -1,0 +1,202 @@
+2017年05月01 18:30:01.260 [main] INFO  o.s.t.c.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017年05月01 18:30:01.452 [main] INFO  o.s.t.c.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7455ffcd, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3a0d2766, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3595b750, org.springframework.test.context.transaction.TransactionalTestExecutionListener@783600ab, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@21661835]
+2017年05月01 18:30:01.763 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/root-context.xml]
+2017年05月01 18:30:04.760 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/applicationContext-activiti.xml]
+2017年05月01 18:30:04.809 [main] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/applicationContext-shiro.xml]
+2017年05月01 18:30:04.874 [main] INFO  o.s.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@3bbce0d6: startup date [Mon May 01 18:30:04 CST 2017]; root of context hierarchy
+2017年05月01 18:30:05.368 [main] INFO  o.s.beans.factory.config.PropertiesFactoryBean - Loading properties file from class path resource [application.properties]
+2017年05月01 18:30:05.430 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017年05月01 18:30:05.534 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:05.559 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druid-stat-pointcut' of type [class org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:05.751 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:05.757 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:05.764 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:06.115 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.beans.factory.config.MethodInvokingFactoryBean#0' of type [class org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:06.170 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#65a2f64f' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:06.175 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#65a2f64f' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:06.224 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#41ada224' of type [class org.springframework.data.repository.core.support.PropertiesBasedNamedQueries] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:06.231 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#59507ecc' of type [class org.springframework.data.repository.query.ExtensionAwareEvaluationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:06.422 [main] ERROR com.alibaba.druid.pool.DruidAbstractDataSource - maxIdle is deprecated
+2017年05月01 18:30:06.422 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [class com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:06.624 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hibernateJpaVendorAdapter' of type [class org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:06.649 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017年05月01 18:30:06.888 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2017年05月01 18:30:06.898 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.8.Final}
+2017年05月01 18:30:06.907 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2017年05月01 18:30:06.909 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2017年05月01 18:30:06.938 [main] INFO  org.hibernate.ejb.Ejb3Configuration - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017年05月01 18:30:07.157 [main] INFO  o.h.s.j.c.internal.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2017年05月01 18:30:07.292 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2017年05月01 18:30:08.671 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017年05月01 18:30:08.693 [main] INFO  o.hibernate.engine.jdbc.internal.LobCreatorBuilder - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017年05月01 18:30:09.007 [main] INFO  o.h.e.t.internal.TransactionFactoryInitiator - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2017年05月01 18:30:09.024 [main] INFO  o.h.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2017年05月01 18:30:09.485 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2017年05月01 18:30:09.492 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2017年05月01 18:30:09.495 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2017年05月01 18:30:09.702 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_role
+2017年05月01 18:30:09.702 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, create_date, name, update_date, code]
+2017年05月01 18:30:09.702 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2017年05月01 18:30:09.702 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+2017年05月01 18:30:09.901 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_sys_category
+2017年05月01 18:30:09.902 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, create_date, name, update_date, code, short_name, parent_id]
+2017年05月01 18:30:09.902 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ijn900idbp1s0noe5y055cyos]
+2017年05月01 18:30:09.902 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_ijn900idbp1s0noe5y055cyos, primary]
+2017年05月01 18:30:10.095 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_sys_deptment
+2017年05月01 18:30:10.095 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, create_date, manger, tel, name, update_date, code, short_name, parent_id]
+2017年05月01 18:30:10.095 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1ifh6vy3otbxeo67qwi5yl01u]
+2017年05月01 18:30:10.095 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_1ifh6vy3otbxeo67qwi5yl01u, primary]
+2017年05月01 18:30:10.289 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_sys_item
+2017年05月01 18:30:10.290 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, category, model, create_date, name, state, imgcode, update_date, format, code]
+2017年05月01 18:30:10.290 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_srfl1q36ht5hxw4s46a28gpix]
+2017年05月01 18:30:10.290 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_srfl1q36ht5hxw4s46a28gpix, primary]
+2017年05月01 18:30:10.487 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_users
+2017年05月01 18:30:10.487 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sex, remark, tel, password, id, username, create_date, email, chinesename, update_date, openid, deptment, salt]
+2017年05月01 18:30:10.487 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ry2eqkowhm6616pbye9xsidg2]
+2017年05月01 18:30:10.487 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_ry2eqkowhm6616pbye9xsidg2, primary]
+2017年05月01 18:30:10.682 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_users_roles
+2017年05月01 18:30:10.683 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [t_users, roles]
+2017年05月01 18:30:10.683 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_45sc819m86wsbya32nkx6ltde, fk_34lo3jfq6sra2171lh3s03ay2]
+2017年05月01 18:30:10.683 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_45sc819m86wsbya32nkx6ltde, fk_45sc819m86wsbya32nkx6ltde, primary, fk_34lo3jfq6sra2171lh3s03ay2]
+2017年05月01 18:30:10.887 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_workflow_check
+2017年05月01 18:30:10.887 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, checkout_time, create_date, hours, update_date, check_date, type, check_time, user]
+2017年05月01 18:30:10.887 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_11fddq3a8lbewqn1rb3fsmy3s]
+2017年05月01 18:30:10.887 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_11fddq3a8lbewqn1rb3fsmy3s, primary]
+2017年05月01 18:30:11.082 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_workflow_dayoff
+2017年05月01 18:30:11.082 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [dateend, approve, reject, remark, hours, tel, state, creater, type, id, username, datefrom, create_date, chinesename, update_date, deptment]
+2017年05月01 18:30:11.082 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_c47ekev0vkmiwndklkp166nhw, fk_bm2np9n20j61kl10iq9nwmy5h]
+2017年05月01 18:30:11.082 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_c47ekev0vkmiwndklkp166nhw, primary, fk_bm2np9n20j61kl10iq9nwmy5h]
+2017年05月01 18:30:11.276 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_workflow_overtime
+2017年05月01 18:30:11.277 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [dateend, approve, reject, remark, hours, tel, state, creater, type, id, username, datefrom, create_date, chinesename, update_date, deptment]
+2017年05月01 18:30:11.277 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_gnxe24p5aksyuqtsxjtaq1s80, fk_k47jyrc24y0609bvyr6rg2mvv]
+2017年05月01 18:30:11.277 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_gnxe24p5aksyuqtsxjtaq1s80, fk_k47jyrc24y0609bvyr6rg2mvv]
+2017年05月01 18:30:11.470 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_workitem
+2017年05月01 18:30:11.470 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, files, title, end_date, approve, reject, create_date, remark, leader, state, begin_date, update_date, creater]
+2017年05月01 18:30:11.470 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4wgyyrto3c88hh8sfr34sx8ow, fk_tenbrmilow3i21vash71uv5kd]
+2017年05月01 18:30:11.471 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_4wgyyrto3c88hh8sfr34sx8ow, primary, fk_tenbrmilow3i21vash71uv5kd]
+2017年05月01 18:30:11.671 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_workitem_applyusers
+2017年05月01 18:30:11.672 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [applyusers, t_workitem]
+2017年05月01 18:30:11.672 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rufmda2ma97jxieqndak7wpbw, fk_383rceqkxhhb5bqka1041up6f]
+2017年05月01 18:30:11.672 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rufmda2ma97jxieqndak7wpbw, primary, fk_383rceqkxhhb5bqka1041up6f, uk_383rceqkxhhb5bqka1041up6f]
+2017年05月01 18:30:11.870 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_workitem_handleusers
+2017年05月01 18:30:11.870 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [t_workitem, handleusers]
+2017年05月01 18:30:11.870 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ismjaj9rmoevyc5kadh5ils5m, fk_17cj4e435kx5j75ilq75xovn4]
+2017年05月01 18:30:11.870 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_ismjaj9rmoevyc5kadh5ils5m, primary, fk_17cj4e435kx5j75ilq75xovn4, uk_ismjaj9rmoevyc5kadh5ils5m]
+2017年05月01 18:30:12.078 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: gzlc.t_workitem_users
+2017年05月01 18:30:12.078 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [users, t_workitem]
+2017年05月01 18:30:12.078 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_k6wvxq8osavhyb4tptjavts2u, fk_cni3wss3hy09xpio920h092tl]
+2017年05月01 18:30:12.078 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_k6wvxq8osavhyb4tptjavts2u, primary, uk_cni3wss3hy09xpio920h092tl, fk_cni3wss3hy09xpio920h092tl]
+2017年05月01 18:30:12.087 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2017年05月01 18:30:12.156 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [class org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.172 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [class com.sun.proxy.$Proxy31] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.201 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#44e0627a' of type [class com.sun.proxy.$Proxy32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.374 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jpaMapppingContext' of type [class org.springframework.data.jpa.repository.config.JpaMetamodelMappingContextFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.374 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jpaMapppingContext' of type [class org.springframework.data.jpa.mapping.JpaMetamodelMappingContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.763 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRepository' of type [class org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.775 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRepository' of type [class com.sun.proxy.$Proxy35] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.846 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#352eaca4' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.847 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#352eaca4' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.848 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#54da03c9' of type [class org.springframework.data.repository.core.support.PropertiesBasedNamedQueries] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.849 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#3c24867e' of type [class org.springframework.data.repository.query.ExtensionAwareEvaluationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.866 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#1f9d90b' of type [class com.sun.proxy.$Proxy32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.878 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleRepository' of type [class org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.879 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleRepository' of type [class com.sun.proxy.$Proxy39] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.904 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [class com.pzy.jcook.sys.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.940 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [class org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.949 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#48d4b6c4' of type [class org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:12.951 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdvice' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.184 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'credentialsMatcher' of type [class com.pzy.jcook.sys.shiro.CustomCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.187 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2017年05月01 18:30:13.188 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'myRealm' of type [class com.pzy.jcook.sys.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.231 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionValidationScheduler' of type [class org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.250 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionIdGenerator' of type [class org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.257 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionDAO' of type [class org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.279 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionIdCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.287 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionManager' of type [class org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.465 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.520 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.521 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeManager' of type [class org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.525 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [authorizationCache]
+2017年05月01 18:30:13.526 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.563 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'oAuth2AuthenticationFilter' of type [class com.pzy.jcook.sys.shiro.oauth2.OAuth2AuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.571 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'util:map#4c9e3fa6' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:13.575 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'util:map#4c9e3fa6' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017年05月01 18:30:15.461 [es] INFO  net.sf.ehcache.util.UpdateChecker - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+2017年05月01 18:30:17.139 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.selectProperty - ooo Using Connection [Transaction-aware proxy for target Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@72fd8f21]]
+2017年05月01 18:30:17.146 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.selectProperty - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
+2017年05月01 18:30:17.282 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.selectProperty - ==> Parameters: schema.version(String)
+2017年05月01 18:30:17.342 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.selectProperty - <==      Total: 1
+2017年05月01 18:30:17.425 [main] INFO  org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2017年05月01 18:30:18.822 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.selectProperty - ooo Using Connection [Transaction-aware proxy for target Connection  from DataSource [{
+	CreateTime:"2017-05-01 18:30:06",
+	ActiveCount:2,
+	PoolingCount:0,
+	CreateCount:2,
+	DestroyCount:0,
+	CloseCount:4,
+	ConnectCount:6,
+	Connections:[
+	]
+}]]
+2017年05月01 18:30:18.826 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.selectProperty - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
+2017年05月01 18:30:18.833 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.selectProperty - ==> Parameters: next.dbid(String)
+2017年05月01 18:30:18.877 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.selectProperty - <==      Total: 1
+2017年05月01 18:30:18.878 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.updateProperty - ooo Using Connection [Transaction-aware proxy for target Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7143e075]]
+2017年05月01 18:30:18.879 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.updateProperty - ==>  Preparing: update ACT_GE_PROPERTY SET REV_ = ?, VALUE_ = ? where NAME_ = ? and REV_ = ? 
+2017年05月01 18:30:18.882 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.updateProperty - ==> Parameters: 19(Integer), 45001(String), next.dbid(String), 18(Integer)
+2017年05月01 18:30:18.924 [main] DEBUG o.a.e.i.p.entity.PropertyEntity.updateProperty - <==    Updates: 1
+2017年05月01 18:30:19.004 [main] INFO  o.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource dayoff.bpmn
+2017年05月01 18:30:26.774 [main] DEBUG o.a.e.i.p.e.P.selectLatestProcessDefinitionByKey - ooo Using Connection [Transaction-aware proxy for target Connection  from DataSource [{
+	CreateTime:"2017-05-01 18:30:06",
+	ActiveCount:1,
+	PoolingCount:1,
+	CreateCount:2,
+	DestroyCount:0,
+	CloseCount:5,
+	ConnectCount:6,
+	Connections:[
+		{ID:1900273781, ConnectTime:"2017-05-01 18:30:18", UseCount:1, LastActiveTime:"2017-05-01 18:30:19"}
+	]
+}]]
+2017年05月01 18:30:26.783 [main] DEBUG o.a.e.i.p.e.P.selectLatestProcessDefinitionByKey - ==>  Preparing: select * from ACT_RE_PROCDEF where KEY_ = ? and (TENANT_ID_ = '' or TENANT_ID_ is null) and VERSION_ = (select max(VERSION_) from ACT_RE_PROCDEF where KEY_ = ? and (TENANT_ID_ = '' or TENANT_ID_ is null)) 
+2017年05月01 18:30:26.800 [main] DEBUG o.a.e.i.p.e.P.selectLatestProcessDefinitionByKey - ==> Parameters: dayoff(String), dayoff(String)
+2017年05月01 18:30:26.840 [main] DEBUG o.a.e.i.p.e.P.selectLatestProcessDefinitionByKey - <==      Total: 1
+2017年05月01 18:30:26.854 [main] DEBUG o.a.e.i.p.e.J.selectJobByTypeAndProcessDefinitionKeyNoTenantId - ooo Using Connection [Transaction-aware proxy for target Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@72fd8f21]]
+2017年05月01 18:30:26.854 [main] DEBUG o.a.e.i.p.e.J.selectJobByTypeAndProcessDefinitionKeyNoTenantId - ==>  Preparing: select J.* from ACT_RU_JOB J inner join ACT_RE_PROCDEF P on J.PROC_DEF_ID_ = P.ID_ where J.HANDLER_TYPE_ = ? and P.KEY_ = ? and (P.TENANT_ID_ = '' or P.TENANT_ID_ is null) 
+2017年05月01 18:30:26.861 [main] DEBUG o.a.e.i.p.e.J.selectJobByTypeAndProcessDefinitionKeyNoTenantId - ==> Parameters: timer-start-event(String), dayoff(String)
+2017年05月01 18:30:26.899 [main] DEBUG o.a.e.i.p.e.J.selectJobByTypeAndProcessDefinitionKeyNoTenantId - <==      Total: 0
+2017年05月01 18:30:26.934 [main] DEBUG o.a.e.i.p.e.E.selectEventSubscriptionsByConfiguration - ooo Using Connection [Transaction-aware proxy for target Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@72fd8f21]]
+2017年05月01 18:30:26.935 [main] DEBUG o.a.e.i.p.e.E.selectEventSubscriptionsByConfiguration - ==>  Preparing: select * from ACT_RU_EVENT_SUBSCR where (EVENT_TYPE_ = ?) and ( (CONFIGURATION_ = ?) or (PROC_DEF_ID_ = ?) ) and (TENANT_ID_ = '' or TENANT_ID_ is null) 
+2017年05月01 18:30:26.935 [main] DEBUG o.a.e.i.p.e.E.selectEventSubscriptionsByConfiguration - ==> Parameters: message(String), dayoff:1:7504(String), dayoff:1:7504(String)
+2017年05月01 18:30:26.978 [main] DEBUG o.a.e.i.p.e.E.selectEventSubscriptionsByConfiguration - <==      Total: 0
+2017年05月01 18:30:26.979 [main] DEBUG o.a.e.i.p.e.E.selectEventSubscriptionsByConfiguration - ooo Using Connection [Transaction-aware proxy for target Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@72fd8f21]]
+2017年05月01 18:30:26.979 [main] DEBUG o.a.e.i.p.e.E.selectEventSubscriptionsByConfiguration - ==>  Preparing: select * from ACT_RU_EVENT_SUBSCR where (EVENT_TYPE_ = ?) and ( (CONFIGURATION_ = ?) or (PROC_DEF_ID_ = ?) ) and (TENANT_ID_ = '' or TENANT_ID_ is null) 
+2017年05月01 18:30:26.992 [main] DEBUG o.a.e.i.p.e.E.selectEventSubscriptionsByConfiguration - ==> Parameters: signal(String), dayoff:1:7504(String), dayoff:1:7504(String)
+2017年05月01 18:30:27.029 [main] DEBUG o.a.e.i.p.e.E.selectEventSubscriptionsByConfiguration - <==      Total: 0
+2017年05月01 18:30:27.031 [main] DEBUG o.a.e.i.p.e.P.insertProcessDefinition - ooo Using Connection [Transaction-aware proxy for target Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@72fd8f21]]
+2017年05月01 18:30:27.031 [main] DEBUG o.a.e.i.p.e.P.insertProcessDefinition - ==>  Preparing: insert into ACT_RE_PROCDEF(ID_, REV_, CATEGORY_, NAME_, KEY_, VERSION_, DEPLOYMENT_ID_, RESOURCE_NAME_, DGRM_RESOURCE_NAME_, DESCRIPTION_, HAS_START_FORM_KEY_, HAS_GRAPHICAL_NOTATION_ , SUSPENSION_STATE_, TENANT_ID_) values (?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2017年05月01 18:30:27.036 [main] DEBUG o.a.e.i.p.e.P.insertProcessDefinition - ==> Parameters: dayoff:2:42504(String), http://www.activiti.org/test(String), dayoff(String), dayoff(String), 2(Integer), 42501(String), dayoff.bpmn(String), dayoff.dayoff.png(String), null, false(Boolean), true(Boolean), 1(Integer), (String)
+2017年05月01 18:30:27.073 [main] DEBUG o.a.e.i.p.e.P.insertProcessDefinition - <==    Updates: 1
+2017年05月01 18:30:27.073 [main] DEBUG o.a.e.i.p.entity.DeploymentEntity.insertDeployment - ooo Using Connection [Transaction-aware proxy for target Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@72fd8f21]]
+2017年05月01 18:30:27.073 [main] DEBUG o.a.e.i.p.entity.DeploymentEntity.insertDeployment - ==>  Preparing: insert into ACT_RE_DEPLOYMENT(ID_, NAME_, CATEGORY_, TENANT_ID_, DEPLOY_TIME_) values(?, ?, ?, ?, ?) 
+2017年05月01 18:30:27.083 [main] DEBUG o.a.e.i.p.entity.DeploymentEntity.insertDeployment - ==> Parameters: 42501(String), null, null, (String), 2017-05-01 18:30:18.395(Timestamp)
+2017年05月01 18:30:27.120 [main] DEBUG o.a.e.i.p.entity.DeploymentEntity.insertDeployment - <==    Updates: 1
+2017年05月01 18:30:27.123 [main] DEBUG o.a.e.i.p.entity.ResourceEntity.bulkInsertResource - ooo Using Connection [Transaction-aware proxy for target Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@72fd8f21]]
+2017年05月01 18:30:27.123 [main] DEBUG o.a.e.i.p.entity.ResourceEntity.bulkInsertResource - ==>  Preparing: INSERT INTO ACT_GE_BYTEARRAY(ID_, REV_, NAME_, BYTES_, DEPLOYMENT_ID_, GENERATED_) VALUES (?, 1, ?, ?, ?, ?) , (?, 1, ?, ?, ?, ?) 
+2017年05月01 18:30:27.124 [main] DEBUG o.a.e.i.p.entity.ResourceEntity.bulkInsertResource - ==> Parameters: 42502(String), dayoff.bpmn(String), java.io.ByteArrayInputStream@65d1bfe(ByteArrayInputStream), 42501(String), false(Boolean), 42503(String), dayoff.dayoff.png(String), java.io.ByteArrayInputStream@4ad8c3f5(ByteArrayInputStream), 42501(String), true(Boolean)
+2017年05月01 18:30:27.209 [main] DEBUG o.a.e.i.p.entity.ResourceEntity.bulkInsertResource - <==    Updates: 2
+2017年05月01 18:30:27.292 [Thread-3] INFO  o.s.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@3bbce0d6: startup date [Mon May 01 18:30:04 CST 2017]; root of context hierarchy
+2017年05月01 18:30:27.342 [Thread-3] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: Thread-3
+2017年05月01 18:30:27.739 [Thread-3] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2017年05月01 18:30:27.739 [Thread-3] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.1.6.1 created.
+2017年05月01 18:30:27.741 [Thread-3] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2017年05月01 18:30:27.741 [Thread-3] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2017年05月01 18:30:27.741 [Thread-3] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 1.6.1
+2017年05月01 18:30:27.742 [Thread-3] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+2017年05月01 18:30:27.742 [Thread-3] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+2017年05月01 18:30:27.742 [Thread-3] INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+2017年05月01 18:30:27.746 [Thread-3] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2017年05月01 18:30:27.783 [Thread-3] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017年05月01 18:30:27.791 [Thread-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

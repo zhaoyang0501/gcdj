@@ -8,11 +8,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.pzy.jcook.project.entity.Project;
 import com.pzy.jcook.sys.entity.BaseEntity;
 import com.pzy.jcook.sys.entity.Deptment;
 import com.pzy.jcook.sys.entity.User;
-
+/***
+ * 请假表
+ * @author 263608237@qq.com
+ *
+ */
 @Entity
 @Table(name = "t_workflow_dayoff")
 public class DayOff  extends BaseEntity<Long>{

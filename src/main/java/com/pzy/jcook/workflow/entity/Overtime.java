@@ -8,11 +8,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.pzy.jcook.project.entity.Project;
 import com.pzy.jcook.sys.entity.BaseEntity;
 import com.pzy.jcook.sys.entity.Deptment;
 import com.pzy.jcook.sys.entity.User;
-
+/***
+ * 加班表
+ * @author 110119
+ *
+ */
 @Entity
 @Table(name = "t_workflow_overtime")
 public class Overtime  extends BaseEntity<Long>{

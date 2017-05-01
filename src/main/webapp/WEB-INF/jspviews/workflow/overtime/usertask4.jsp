@@ -26,7 +26,8 @@
 
 				<div class="page-content">
 						   <form class="form-horizontal" action="${pageContext.request.contextPath}/workflow/ship/doapprove/${task.id}/${prcessInstanceid}" method="post">
-			          
+			           <input id='id' type="hidden" value="${bean.id }"/>
+			            <input id='pass' name='pass' type="hidden" value="true"/>
 						<div class="row">
 						
 						 <div class="col-sm-12">

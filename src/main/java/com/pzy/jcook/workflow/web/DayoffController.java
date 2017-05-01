@@ -220,6 +220,7 @@ public class DayoffController extends AbstractBaseCURDController<DayOff,Long> {
 		Task task = processEngine.getTaskService().createTaskQuery().taskId(taskid).singleResult();
 		Map<String, Object> activtiMap = new HashMap<String, Object>();
 		ship = this.dayoffService.find(ship.getId());
+		ship.setReject(pass?1:0);
 		/** TODO 判断当前登录人是不是任务的拥有者 ***/
 		if ("usertask2".equals(task.getTaskDefinitionKey())) {
 			activtiMap.put("pass", pass);
