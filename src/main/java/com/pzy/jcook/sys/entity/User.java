@@ -1,5 +1,6 @@
 package com.pzy.jcook.sys.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -35,12 +36,12 @@ public class User extends BaseEntity<Long>{
 	private  Deptment deptment;
 	
 	@OneToMany
-	private Set<Role> roles;
+	private List<Role> roles;
 	
-	public Set<Role> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 	public String getRemark() {

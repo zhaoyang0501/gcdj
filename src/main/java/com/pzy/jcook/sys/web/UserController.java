@@ -136,7 +136,7 @@ public class UserController extends AbstractBaseCURDController<User,Long>  {
 		}
 		if(StringUtils.isNotBlank(role)){
 			String[] ids = role.split(",");
-			Set<Role> roles = new HashSet<Role>();
+			List<Role> roles = new ArrayList<Role>();
 			for(int i=0;i<ids.length;i++){
 				roles.add(this.getBaseService().findRole(Long.valueOf(ids[i])));
 			}
