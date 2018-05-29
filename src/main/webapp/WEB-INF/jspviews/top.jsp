@@ -14,7 +14,7 @@
 					<a href="index.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							公司考勤系统
+							办公系统自动化的开发与实现
 						</small>
 					</a>
 				</div>

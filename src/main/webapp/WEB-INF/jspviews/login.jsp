@@ -52,8 +52,8 @@
 							<div class="center">
 								<h1>
 									<i class="icon-leaf green"></i>
-									<span class="red">XX公司</span>
-									<span class="white">公司考勤系统</span>
+									<span class="red"></span>
+									<span class="white">办公系统自动化的开发与实现</span>
 								</h1>
 							</div>
 
